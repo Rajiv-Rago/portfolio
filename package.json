@@ -7,13 +7,15 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "db:migrate": "node scripts/migrate.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@supabase/supabase-js": "^2.97.0",
     "date-fns": "^4.1.0",
     "lucide-react": "^0.575.0",
+    "postgres": "^3.4.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hook-form": "^7.71.2",

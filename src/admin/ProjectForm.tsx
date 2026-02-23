@@ -15,6 +15,8 @@ const schema = z.object({
   live_url: z.string().url('Please enter a valid URL').or(z.literal('')),
   repo_url: z.string().url('Please enter a valid URL').or(z.literal('')),
   thumbnail: z.string(),
+  thumbnail_mode: z.enum(['image', 'live']),
+  thumbnail_position: z.enum(['top', 'center', 'bottom']),
   status: z.enum(['draft', 'published']),
   is_featured: z.boolean(),
   sort_order: z.number(),
@@ -29,7 +31,7 @@ interface ProjectFormProps {
 }
 
 export default function ProjectForm({ project, onSubmit, onCancel }: ProjectFormProps) {
-  const { register, handleSubmit, control, reset, formState: { errors, isSubmitting } } = useForm<ProjectFormData>({
+  const { register, handleSubmit, control, reset, watch, setValue, formState: { errors, isSubmitting } } = useForm<ProjectFormData>({
     resolver: zodResolver(schema),
     defaultValues: {
       title: '',
@@ -38,6 +40,8 @@ export default function ProjectForm({ project, onSubmit, onCancel }: ProjectForm
       live_url: '',
       repo_url: '',
       thumbnail: '',
+      thumbnail_mode: 'image',
+      thumbnail_position: 'center',
       status: 'draft',
       is_featured: false,
       sort_order: 0,
@@ -53,6 +57,8 @@ export default function ProjectForm({ project, onSubmit, onCancel }: ProjectForm
         live_url: project.live_url ?? '',
         repo_url: project.repo_url ?? '',
         thumbnail: project.thumbnail ?? '',
+        thumbnail_mode: project.thumbnail_mode ?? 'image',
+        thumbnail_position: project.thumbnail_position ?? 'center',
         status: project.status,
         is_featured: project.is_featured,
         sort_order: project.sort_order,
@@ -80,6 +86,29 @@ export default function ProjectForm({ project, onSubmit, onCancel }: ProjectForm
       <Input label="Live URL" {...register('live_url')} error={errors.live_url?.message} placeholder="https://..." />
       <Input label="Repo URL" {...register('repo_url')} error={errors.repo_url?.message} placeholder="https://..." />
       <Input label="Thumbnail URL" {...register('thumbnail')} placeholder="https://..." />
+
+      <div className="flex items-center gap-4">
+        <label className="flex items-center gap-2 text-sm">
+          <input
+            type="checkbox"
+            checked={watch('thumbnail_mode') === 'live'}
+            onChange={(e) => setValue('thumbnail_mode', e.target.checked ? 'live' : 'image')}
+            className="accent-accent"
+          />
+          Use live demo as thumbnail
+        </label>
+        {watch('thumbnail_mode') !== 'live' && (
+          <label className="text-sm">
+            Thumbnail Focus
+            <select {...register('thumbnail_position')} className="ml-2 border border-border rounded-[--radius-md] px-2 py-1 text-sm bg-surface">
+              <option value="top">Top</option>
+              <option value="center">Center</option>
+              <option value="bottom">Bottom</option>
+            </select>
+          </label>
+        )}
+      </div>
+
       <Input label="Sort Order" type="number" {...register('sort_order', { valueAsNumber: true })} />
 
       <div className="flex items-center gap-6">

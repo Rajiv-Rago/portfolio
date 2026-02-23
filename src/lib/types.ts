@@ -20,6 +20,8 @@ export interface Project {
   live_url: string | null
   repo_url: string | null
   thumbnail: string | null
+  thumbnail_position: 'top' | 'center' | 'bottom'
+  thumbnail_mode: 'image' | 'live'
   status: 'draft' | 'published'
   is_featured: boolean
   sort_order: number

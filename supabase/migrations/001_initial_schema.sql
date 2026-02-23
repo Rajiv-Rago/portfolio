@@ -142,10 +142,12 @@ CREATE POLICY "Auth full access contact_messages"
 -- ============================================================
 -- Seed: placeholder profile
 -- ============================================================
-INSERT INTO profile (name, title, bio, email)
+INSERT INTO profile (name, title, bio, email, github, linkedin)
 VALUES (
-  'Jane Doe',
+  'Rajiv Rago',
   'Full-Stack Developer',
-  'I build thoughtful, performant web applications. Focused on clean architecture, open source, and shipping things that matter.',
-  'jane@example.com'
+  'Full-Stack Developer building backend systems, APIs, and AI-powered tools. Skilled in Python, TypeScript, and cloud infrastructure. Currently prototyping AI agents and workflows at an R&D biotech startup.',
+  'ragorajiv2@gmail.com',
+  'https://github.com/rajiv-rago',
+  'https://linkedin.com/in/rajiv-rago'
 );

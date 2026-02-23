@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { format, parse } from 'date-fns'
 import type { Experience } from '../../lib/types'
 
@@ -7,8 +8,20 @@ function formatDate(dateStr: string): string {
 }
 
 export default function ExperienceCard({ experience }: { experience: Experience }) {
+  const [logoError, setLogoError] = useState(false)
+
   return (
     <div className="bg-surface border border-border rounded-[--radius-lg] p-6 transition-colors hover:border-accent">
+      {experience.company_logo && !logoError && (
+        <div className="aspect-video overflow-hidden rounded-[--radius-sm] mb-4">
+          <img
+            src={experience.company_logo}
+            alt={`${experience.company} logo`}
+            className="w-full h-full object-cover object-center"
+            onError={() => setLogoError(true)}
+          />
+        </div>
+      )}
       <div className="font-heading font-normal text-lg">{experience.job_title}</div>
       <div className="text-accent text-sm font-semibold">{experience.company}</div>
       <div className="text-muted text-xs mt-1 mb-3">
