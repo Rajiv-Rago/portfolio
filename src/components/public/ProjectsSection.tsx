@@ -9,7 +9,7 @@ function getGridClass(count: number): string {
 }
 
 export default function ProjectsSection({ projects }: { projects: Project[] }) {
-  const { ref, isVisible } = useScrollReveal()
+  const { ref, isVisible } = useScrollReveal<HTMLElement>()
 
   if (projects.length === 0) return null
 

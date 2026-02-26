@@ -4,7 +4,7 @@ import BlogPostCard from './BlogPostCard'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export default function BlogSection({ posts }: { posts: BlogPost[] }) {
-  const { ref, isVisible } = useScrollReveal()
+  const { ref, isVisible } = useScrollReveal<HTMLElement>()
 
   if (posts.length === 0) return null
 

@@ -3,7 +3,7 @@ import ExperienceCard from './ExperienceCard'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export default function ExperienceSection({ experience }: { experience: Experience[] }) {
-  const { ref, isVisible } = useScrollReveal()
+  const { ref, isVisible } = useScrollReveal<HTMLElement>()
 
   if (experience.length === 0) return null
 
