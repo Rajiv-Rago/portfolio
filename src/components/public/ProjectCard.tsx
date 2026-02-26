@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
       )}
       {showLive && (
-        <div className="aspect-video overflow-hidden rounded-[--radius-sm] mb-4 relative">
+        <div className="aspect-video overflow-hidden rounded-[--radius-sm] mb-4 relative bg-surface">
           <iframe
             src={project.live_url!}
             title={`${project.title} live preview`}
