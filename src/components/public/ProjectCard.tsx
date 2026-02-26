@@ -6,7 +6,7 @@ const objectPositionMap = {
   bottom: 'object-bottom',
 } as const
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({ project, allowFeaturedSpan = true }: { project: Project; allowFeaturedSpan?: boolean }) {
   const mode = project.thumbnail_mode ?? 'image'
   const position = project.thumbnail_position ?? 'center'
   const showImage = mode === 'image' && project.thumbnail
@@ -14,8 +14,8 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div
-      className={`bg-surface border border-border rounded-[--radius-lg] p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-text/5 hover:border-accent ${
-        project.is_featured ? 'col-span-2 max-md:col-span-1' : ''
+      className={`h-full bg-surface border border-border rounded-[--radius-lg] p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-text/5 hover:border-accent ${
+        project.is_featured && allowFeaturedSpan ? 'col-span-2 max-md:col-span-1' : ''
       }`}
     >
       {/* Thumbnail */}
@@ -24,6 +24,9 @@ export default function ProjectCard({ project }: { project: Project }) {
           <img
             src={project.thumbnail!}
             alt={project.title}
+            loading="lazy"
+            width={600}
+            height={337}
             className={`w-full h-full object-cover ${objectPositionMap[position]}`}
           />
         </div>

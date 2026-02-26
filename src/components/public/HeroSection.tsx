@@ -1,48 +1,89 @@
 import { Download } from 'lucide-react'
 import type { Profile } from '../../lib/types'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export default function HeroSection({ profile }: { profile: Profile }) {
+  const { ref, isVisible } = useScrollReveal()
+
   return (
-    <div className="relative mx-12 mt-8 mb-16 p-12 rounded-[--radius-xl] bg-gradient-to-br from-accent-light via-gray-100 to-indigo-100 flex items-center gap-12 overflow-hidden max-md:flex-col max-md:text-center max-md:mx-4 max-md:p-8">
-      {/* Background blob */}
-      <svg
-        className="absolute -right-15 -top-15 w-[300px] h-[300px] opacity-12"
-        viewBox="0 0 300 300"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <circle cx="150" cy="150" r="140" fill="#2563eb" />
-      </svg>
+    <div ref={ref} className={`scroll-reveal ${isVisible ? 'is-visible' : ''}`}>
+      <div className="relative mx-12 mt-8 mb-16 p-12 rounded-[--radius-xl] bg-gradient-to-br from-accent-light via-gray-100 to-indigo-100 flex flex-col items-center text-center overflow-hidden max-md:mx-4 max-md:p-8">
+        {/* Background pixel-art terminal */}
+        <svg
+          className="absolute -right-5 -top-5 w-[300px] h-[300px] opacity-10"
+          viewBox="0 0 28 20"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          style={{ imageRendering: 'pixelated' }}
+        >
+          {/* Title bar */}
+          <rect x="0" y="0" width="28" height="4" fill="#2563eb" />
+          <rect x="1" y="1" width="2" height="2" fill="#ef4444" />
+          <rect x="4" y="1" width="2" height="2" fill="#fbbf24" />
+          <rect x="7" y="1" width="2" height="2" fill="#22c55e" />
+          {/* Terminal body */}
+          <rect x="0" y="4" width="28" height="16" fill="#1e3a5f" />
+          {/* Code lines */}
+          <rect x="2" y="6" width="10" height="1" fill="#60a5fa" />
+          <rect x="4" y="8" width="14" height="1" fill="#93c5fd" />
+          <rect x="4" y="10" width="8" height="1" fill="#60a5fa" />
+          <rect x="2" y="12" width="12" height="1" fill="#93c5fd" />
+          <rect x="4" y="14" width="6" height="1" fill="#60a5fa" />
+          {/* Cursor */}
+          <rect x="2" y="16" width="2" height="2" fill="#dbeafe" />
+        </svg>
 
-      {/* Avatar */}
-      <div className="shrink-0 w-[130px] h-[130px] rounded-[--radius-xl] overflow-hidden shadow-lg shadow-accent/15 -rotate-3 max-md:rotate-0">
-        {profile.avatar_url ? (
-          <img src={profile.avatar_url} alt={`${profile.name}'s avatar`} className="w-full h-full object-cover" />
-        ) : (
-          <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-label={`${profile.name}'s avatar`}>
-            <rect width="130" height="130" rx="24" fill="#dbeafe" />
-            <circle cx="65" cy="48" r="20" fill="#2563eb" opacity=".5" />
-            <ellipse cx="65" cy="105" rx="34" ry="28" fill="#2563eb" opacity=".35" />
-          </svg>
-        )}
-      </div>
+        {/* Avatar */}
+        <div className="relative z-1 shrink-0 w-[130px] h-[130px] rounded-[--radius-xl] overflow-hidden shadow-lg shadow-accent/15 -rotate-3 mb-4">
+          {profile.avatar_url ? (
+            <img src={profile.avatar_url} alt={`${profile.name}'s avatar`} className="w-full h-full object-cover" width={130} height={130} />
+          ) : (
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-label={`${profile.name}'s avatar`} style={{ imageRendering: 'pixelated' }}>
+              <rect width="16" height="16" rx="3" fill="#dbeafe" />
+              {/* Hair */}
+              <rect x="5" y="1" width="6" height="1" fill="#1e3a5f" />
+              <rect x="4" y="2" width="8" height="1" fill="#1e3a5f" />
+              <rect x="4" y="3" width="8" height="1" fill="#1e3a5f" />
+              {/* Face */}
+              <rect x="5" y="4" width="6" height="1" fill="#fcd34d" />
+              <rect x="5" y="5" width="6" height="1" fill="#fcd34d" />
+              {/* Eyes */}
+              <rect x="6" y="5" width="1" height="1" fill="#1e3a5f" />
+              <rect x="9" y="5" width="1" height="1" fill="#1e3a5f" />
+              {/* Lower face */}
+              <rect x="5" y="6" width="6" height="1" fill="#fcd34d" />
+              <rect x="6" y="7" width="4" height="1" fill="#fcd34d" />
+              {/* Shirt */}
+              <rect x="4" y="8" width="8" height="1" fill="#2563eb" />
+              <rect x="3" y="9" width="10" height="1" fill="#2563eb" />
+              <rect x="3" y="10" width="10" height="1" fill="#2563eb" />
+              {/* Desk */}
+              <rect x="1" y="11" width="14" height="1" fill="#94a3b8" />
+              {/* Laptop */}
+              <rect x="5" y="12" width="6" height="1" fill="#334155" />
+              <rect x="4" y="13" width="8" height="1" fill="#475569" />
+              <rect x="6" y="12" width="4" height="1" fill="#60a5fa" />
+            </svg>
+          )}
+        </div>
 
-      {/* Text */}
-      <div className="relative z-1">
-        <h1 className="text-4xl font-normal mb-1">Hey, I'm {profile.name.split(' ')[0]}</h1>
-        <p className="text-lg text-accent font-semibold mb-4">{profile.title}</p>
-        <p className="text-muted max-w-[440px] text-[0.95rem] max-md:mx-auto">{profile.bio}</p>
-        {profile.resume_url && (
-          <a
-            href={profile.resume_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-5 px-5 py-2 bg-accent text-white rounded-[--radius-md] text-sm font-semibold hover:bg-accent-dark transition-colors no-underline"
-          >
-            <Download className="w-4 h-4" />
-            Download Resume
-          </a>
-        )}
+        {/* Text */}
+        <div className="relative z-1">
+          <h1 className="text-4xl font-normal mb-1">Hey, I'm {profile.name.split(' ')[0]}</h1>
+          <p className="text-lg text-accent font-semibold mb-4">{profile.title}</p>
+          <p className="text-muted max-w-[440px] text-[0.95rem] mx-auto">{profile.bio}</p>
+          {profile.resume_url && (
+            <a
+              href={profile.resume_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-5 px-5 py-2 bg-accent text-white rounded-[--radius-md] text-sm font-semibold hover:bg-accent-dark transition-colors no-underline"
+            >
+              <Download className="w-4 h-4" />
+              Download Resume
+            </a>
+          )}
+        </div>
       </div>
     </div>
   )
