@@ -35,36 +35,7 @@ export default function HeroSection({ profile }: { profile: Profile }) {
 
         {/* Avatar */}
         <div className="relative z-1 shrink-0 w-[130px] h-[130px] rounded-[--radius-xl] overflow-hidden shadow-lg shadow-accent/15 -rotate-3 mb-4">
-          {profile.avatar_url ? (
-            <img src={profile.avatar_url} alt={`${profile.name}'s avatar`} className="w-full h-full object-cover" width={130} height={130} />
-          ) : (
-            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-label={`${profile.name}'s avatar`} style={{ imageRendering: 'pixelated' }}>
-              <rect width="16" height="16" rx="3" fill="#dbeafe" />
-              {/* Hair */}
-              <rect x="5" y="1" width="6" height="1" fill="#1e3a5f" />
-              <rect x="4" y="2" width="8" height="1" fill="#1e3a5f" />
-              <rect x="4" y="3" width="8" height="1" fill="#1e3a5f" />
-              {/* Face */}
-              <rect x="5" y="4" width="6" height="1" fill="#fcd34d" />
-              <rect x="5" y="5" width="6" height="1" fill="#fcd34d" />
-              {/* Eyes */}
-              <rect x="6" y="5" width="1" height="1" fill="#1e3a5f" />
-              <rect x="9" y="5" width="1" height="1" fill="#1e3a5f" />
-              {/* Lower face */}
-              <rect x="5" y="6" width="6" height="1" fill="#fcd34d" />
-              <rect x="6" y="7" width="4" height="1" fill="#fcd34d" />
-              {/* Shirt */}
-              <rect x="4" y="8" width="8" height="1" fill="#2563eb" />
-              <rect x="3" y="9" width="10" height="1" fill="#2563eb" />
-              <rect x="3" y="10" width="10" height="1" fill="#2563eb" />
-              {/* Desk */}
-              <rect x="1" y="11" width="14" height="1" fill="#94a3b8" />
-              {/* Laptop */}
-              <rect x="5" y="12" width="6" height="1" fill="#334155" />
-              <rect x="4" y="13" width="8" height="1" fill="#475569" />
-              <rect x="6" y="12" width="4" height="1" fill="#60a5fa" />
-            </svg>
-          )}
+          <img src="/Probably me.png" alt={`${profile.name}'s avatar`} className="w-full h-full object-cover" width={130} height={130} />
         </div>
 
         {/* Text */}
