@@ -10,7 +10,7 @@ export default function HeroSection({ profile }: { profile: Profile }) {
       <div className="relative mx-12 mt-8 mb-16 p-12 rounded-[--radius-xl] flex flex-col items-center text-center overflow-hidden max-md:mx-4 max-md:p-8">
         {/* Avatar */}
         <div className="relative z-1 shrink-0 w-[130px] h-[130px] rounded-[--radius-xl] overflow-hidden shadow-lg shadow-accent/15 mb-4">
-          <img src="/Probably me.png" alt={`${profile.name}'s avatar`} className="w-full h-full object-cover" style={{ imageRendering: 'pixelated' }} width={130} height={130} />
+          <img src="/me.png" alt={`${profile.name}'s avatar`} className="w-full h-full object-cover" style={{ imageRendering: 'pixelated' }} width={130} height={130} />
         </div>
 
         {/* Text */}
