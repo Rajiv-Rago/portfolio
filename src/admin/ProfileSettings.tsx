@@ -16,6 +16,7 @@ const schema = z.object({
   title: z.string().min(1, 'Title is required'),
   bio: z.string().min(1, 'Bio is required'),
   email: z.string().email('Please enter a valid email'),
+  contact_intro: z.string(),
   avatar_url: z.string(),
   github: z.string(),
   linkedin: z.string(),
@@ -44,6 +45,7 @@ export default function ProfileSettings() {
           title: data.title,
           bio: data.bio,
           email: data.email,
+          contact_intro: data.contact_intro ?? '',
           avatar_url: data.avatar_url ?? '',
           github: data.github ?? '',
           linkedin: data.linkedin ?? '',
@@ -59,6 +61,7 @@ export default function ProfileSettings() {
     if (!profile) return
     const payload = {
       ...data,
+      contact_intro: data.contact_intro || null,
       avatar_url: data.avatar_url || null,
       github: data.github || null,
       linkedin: data.linkedin || null,
@@ -96,6 +99,7 @@ export default function ProfileSettings() {
         <Input label="Name" {...register('name')} error={errors.name?.message} />
         <Input label="Title" {...register('title')} error={errors.title?.message} />
         <Textarea label="Bio" {...register('bio')} error={errors.bio?.message} className="min-h-[80px]" />
+        <Textarea label="Contact Intro" {...register('contact_intro')} error={errors.contact_intro?.message} className="min-h-[80px]" />
         <Input label="Email" type="email" {...register('email')} error={errors.email?.message} />
 
         <div className="space-y-1">

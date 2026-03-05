@@ -5,6 +5,7 @@ export interface Profile {
   bio: string
   avatar_url: string | null
   email: string
+  contact_intro: string | null
   github: string | null
   linkedin: string | null
   website: string | null
