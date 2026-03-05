@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Write setup guide (docs/email-setup.md) and fix edge function sender address
+- [x] 01-01-PLAN.md — Write setup guide (docs/email-setup.md) and fix edge function sender address
 - [ ] 01-02-PLAN.md — Configure email services following guide, verify end-to-end delivery and authentication
 
 ### Phase 2: Contact Simplification
@@ -69,6 +69,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Email Infrastructure | 0/2 | Not started | - |
+| 1. Email Infrastructure | 1/2 | In Progress | - |
 | 2. Contact Simplification | 1/2 | In Progress | - |
 | 3. UI/UX Polish | 0/0 | Not started | - |
