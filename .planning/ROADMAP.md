@@ -44,7 +44,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Data contract (contact_intro migration + types + admin form) and test infrastructure (vitest setup + failing EmailCTA tests)
+- [x] 02-01-PLAN.md — Data contract (contact_intro migration + types + admin form) and test infrastructure (vitest setup + failing EmailCTA tests)
 - [ ] 02-02-PLAN.md — UI implementation (EmailCTA component, ContactSection and ContactLinks updates) with visual verification
 
 ### Phase 3: UI/UX Polish
@@ -70,5 +70,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Email Infrastructure | 0/2 | Not started | - |
-| 2. Contact Simplification | 0/2 | Not started | - |
+| 2. Contact Simplification | 1/2 | In Progress | - |
 | 3. UI/UX Polish | 0/0 | Not started | - |
