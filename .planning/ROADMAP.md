@@ -27,10 +27,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Rajiv can compose and send email from Gmail as mail@rajivrago.com, and recipients see that address
   3. Emails sent as mail@rajivrago.com pass SPF, DKIM, and DMARC checks (no spam flags)
   4. A setup guide document exists with step-by-step instructions for all manual configuration performed
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md — Write setup guide (docs/email-setup.md) and fix edge function sender address
+- [ ] 01-02-PLAN.md — Configure email services following guide, verify end-to-end delivery and authentication
 
 ### Phase 2: Contact Simplification
 **Goal**: Visitors can contact Rajiv directly via email link instead of filling out a form, with zero friction
@@ -68,6 +69,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Email Infrastructure | 0/0 | Not started | - |
+| 1. Email Infrastructure | 0/2 | Not started | - |
 | 2. Contact Simplification | 0/2 | Not started | - |
 | 3. UI/UX Polish | 0/0 | Not started | - |
