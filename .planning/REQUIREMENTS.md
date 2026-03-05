@@ -55,23 +55,23 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| EMAIL-01 | TBD | Pending |
-| EMAIL-02 | TBD | Pending |
-| EMAIL-03 | TBD | Pending |
-| EMAIL-04 | TBD | Pending |
-| CONT-01 | TBD | Pending |
-| CONT-02 | TBD | Pending |
-| CONT-03 | TBD | Pending |
-| UIUX-01 | TBD | Pending |
-| UIUX-02 | TBD | Pending |
-| UIUX-03 | TBD | Pending |
-| UIUX-04 | TBD | Pending |
+| EMAIL-01 | Phase 1 | Pending |
+| EMAIL-02 | Phase 1 | Pending |
+| EMAIL-03 | Phase 1 | Pending |
+| EMAIL-04 | Phase 1 | Pending |
+| CONT-01 | Phase 2 | Pending |
+| CONT-02 | Phase 2 | Pending |
+| CONT-03 | Phase 2 | Pending |
+| UIUX-01 | Phase 3 | Pending |
+| UIUX-02 | Phase 3 | Pending |
+| UIUX-03 | Phase 3 | Pending |
+| UIUX-04 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 11 total
-- Mapped to phases: 0
-- Unmapped: 11
+- Mapped to phases: 11
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-05 after initial definition*
+*Last updated: 2026-03-05 after roadmap creation*
