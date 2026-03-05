@@ -1,9 +1,8 @@
-import { Mail, Github, Linkedin, Globe } from 'lucide-react'
+import { Github, Linkedin, Globe } from 'lucide-react'
 import type { Profile } from '../../lib/types'
 
 export default function ContactLinks({ profile }: { profile: Profile }) {
   const links = [
-    { url: profile.email ? `mailto:${profile.email}` : null, label: profile.email, icon: Mail, newTab: false },
     { url: profile.github, label: profile.github?.replace('https://', ''), icon: Github, newTab: true },
     { url: profile.linkedin, label: profile.linkedin?.replace('https://', ''), icon: Linkedin, newTab: true },
     { url: profile.website, label: profile.website?.replace('https://', ''), icon: Globe, newTab: true },
@@ -12,7 +11,7 @@ export default function ContactLinks({ profile }: { profile: Profile }) {
   return (
     <div className="flex flex-col gap-5">
       <p className="text-muted text-[0.95rem]">
-        Feel free to reach out through any of these channels, or use the form to send me a message directly.
+        {profile.contact_intro ?? "I'd love to hear from you! Whether you have a project in mind, want to collaborate, or just want to say hello \u2014 don't hesitate to reach out."}
       </p>
       {links.map((link) => (
         <a

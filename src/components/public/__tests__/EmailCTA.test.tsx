@@ -7,10 +7,11 @@ const TEST_EMAIL = 'mail@rajivrago.com'
 
 describe('EmailCTA', () => {
   beforeEach(() => {
-    Object.assign(navigator, {
-      clipboard: {
-        writeText: vi.fn().mockResolvedValue(undefined),
-      },
+    const writeText = vi.fn().mockResolvedValue(undefined)
+    Object.defineProperty(navigator, 'clipboard', {
+      value: { writeText },
+      writable: true,
+      configurable: true,
     })
   })
 
@@ -34,8 +35,9 @@ describe('EmailCTA', () => {
     const user = userEvent.setup()
     render(<EmailCTA email={TEST_EMAIL} />)
 
+    const spy = vi.spyOn(navigator.clipboard, 'writeText')
     await user.click(screen.getByRole('button', { name: /copy email/i }))
-    expect(navigator.clipboard.writeText).toHaveBeenCalledWith(TEST_EMAIL)
+    expect(spy).toHaveBeenCalledWith(TEST_EMAIL)
   })
 
   it('changes button text to "Copied!" after clicking copy', async () => {
