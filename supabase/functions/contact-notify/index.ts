@@ -5,6 +5,7 @@ import { serve } from 'https://deno.land/std@0.177.0/http/server.ts'
 
 const OWNER_EMAIL = Deno.env.get('OWNER_EMAIL') ?? ''
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') ?? ''
+const SENDER_EMAIL = Deno.env.get('SENDER_EMAIL') ?? 'noreply@rajivrago.com'
 
 interface ContactPayload {
   type: 'INSERT'
@@ -48,7 +49,7 @@ Reply: mailto:${sender_email}
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Portfolio <noreply@yourdomain.com>',
+        from: `Portfolio <${SENDER_EMAIL}>`,
         to: OWNER_EMAIL,
         subject: `Portfolio Contact: ${subject}`,
         text: emailBody,
