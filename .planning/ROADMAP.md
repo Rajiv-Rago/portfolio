@@ -40,10 +40,11 @@ Plans:
   1. The contact section shows a mailto:mail@rajivrago.com link that opens the visitor's email client
   2. A copy-to-clipboard button copies the email address and shows visual confirmation
   3. The admin dashboard still displays historical contact form submissions
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md — Data contract (contact_intro migration + types + admin form) and test infrastructure (vitest setup + failing EmailCTA tests)
+- [ ] 02-02-PLAN.md — UI implementation (EmailCTA component, ContactSection and ContactLinks updates) with visual verification
 
 ### Phase 3: UI/UX Polish
 **Goal**: The portfolio feels alive and polished -- interactive hover states, staggered reveals, and clear visual rhythm between sections
@@ -68,5 +69,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Email Infrastructure | 0/0 | Not started | - |
-| 2. Contact Simplification | 0/0 | Not started | - |
+| 2. Contact Simplification | 0/2 | Not started | - |
 | 3. UI/UX Polish | 0/0 | Not started | - |
