@@ -77,6 +77,45 @@ h1, h2, h3, h4, h5, h6 {
   .scroll-reveal.is-visible { animation: none; }
 }
 
+.stagger-item {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.stagger-item.is-visible {
+  animation: fade-up 0.6s ease-out forwards;
+  animation-delay: calc(var(--stagger-index, 0) * 80ms);
+}
+
+.animated-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.animated-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-item { opacity: 1; transform: none; }
+  .stagger-item.is-visible { animation: none; }
+  .animated-underline::after { transition: none; }
+}
+
 @keyframes shimmer {
   0% { background-position: -400px 0; }
   100% { background-position: 400px 0; }
