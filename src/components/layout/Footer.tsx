@@ -20,7 +20,7 @@ export default function Footer({ name, email, github, linkedin }: FooterProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-muted hover:text-accent transition-colors"
+              className="text-muted hover:text-accent hover:-translate-y-0.5 hover:scale-110 transition-all"
             >
               <Github className="w-5 h-5" />
             </a>
@@ -31,7 +31,7 @@ export default function Footer({ name, email, github, linkedin }: FooterProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-muted hover:text-accent transition-colors"
+              className="text-muted hover:text-accent hover:-translate-y-0.5 hover:scale-110 transition-all"
             >
               <Linkedin className="w-5 h-5" />
             </a>
@@ -40,7 +40,7 @@ export default function Footer({ name, email, github, linkedin }: FooterProps) {
             <a
               href={`mailto:${email}`}
               aria-label="Email"
-              className="text-muted hover:text-accent transition-colors"
+              className="text-muted hover:text-accent hover:-translate-y-0.5 hover:scale-110 transition-all"
             >
               <Mail className="w-5 h-5" />
             </a>

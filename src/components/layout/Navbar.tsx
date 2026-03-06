@@ -23,8 +23,8 @@ export default function Navbar({ name, sections }: NavbarProps) {
           <li key={s.id}>
             <a
               href={`#${s.id}`}
-              className={`text-sm font-medium transition-colors hover:text-accent ${
-                activeId === s.id ? 'text-accent' : 'text-muted'
+              className={`text-sm font-medium transition-colors animated-underline ${
+                activeId === s.id ? 'text-accent' : 'text-muted hover:text-accent'
               }`}
             >
               {s.label}

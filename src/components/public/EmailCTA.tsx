@@ -30,12 +30,12 @@ export default function EmailCTA({ email }: { email: string }) {
     <div className="flex flex-col gap-4">
       <a
         href={`mailto:${email}`}
-        className="flex items-center gap-3 no-underline text-text text-lg font-medium hover:text-accent transition-colors"
+        className="flex items-center gap-3 no-underline text-text text-lg font-medium hover:text-accent hover:-translate-y-0.5 transition-all"
       >
         <Mail className="w-5 h-5 shrink-0 text-accent" />
         {email}
       </a>
-      <Button variant="ghost" onClick={handleCopy}>
+      <Button variant="ghost" className="hover:-translate-y-0.5 transition-all" onClick={handleCopy}>
         {copied ? (
           <>
             <Check className="w-4 h-4" /> Copied!
