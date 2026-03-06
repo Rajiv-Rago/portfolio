@@ -16,8 +16,14 @@ export default function ExperienceSection({ experience }: { experience: Experien
         {/* Vertical timeline line */}
         <div className="absolute left-[5px] top-2 bottom-2 w-[2px] bg-border" />
         <div className="flex flex-col gap-6">
-          {experience.map((exp) => (
-            <ExperienceCard key={exp.id} experience={exp} />
+          {experience.map((exp, index) => (
+            <div
+              key={exp.id}
+              className={`stagger-item ${isVisible ? 'is-visible' : ''}`}
+              style={{ '--stagger-index': index } as React.CSSProperties}
+            >
+              <ExperienceCard experience={exp} />
+            </div>
           ))}
         </div>
       </div>

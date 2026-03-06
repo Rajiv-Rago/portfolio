@@ -21,8 +21,16 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
         Projects
       </h2>
       <div className={getGridClass(projects.length)}>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} allowFeaturedSpan={allowFeaturedSpan} />
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            className={`stagger-item ${isVisible ? 'is-visible' : ''} ${
+              project.is_featured && allowFeaturedSpan ? 'col-span-2 max-md:col-span-1' : ''
+            }`}
+            style={{ '--stagger-index': index } as React.CSSProperties}
+          >
+            <ProjectCard project={project} allowFeaturedSpan={false} />
+          </div>
         ))}
       </div>
     </section>

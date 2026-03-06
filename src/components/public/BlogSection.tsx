@@ -17,8 +17,14 @@ export default function BlogSection({ posts }: { posts: BlogPost[] }) {
         Blog
       </h2>
       <div className="grid grid-cols-2 gap-5 max-md:grid-cols-1">
-        {displayed.map((post) => (
-          <BlogPostCard key={post.id} post={post} />
+        {displayed.map((post, index) => (
+          <div
+            key={post.id}
+            className={`stagger-item ${isVisible ? 'is-visible' : ''}`}
+            style={{ '--stagger-index': index } as React.CSSProperties}
+          >
+            <BlogPostCard post={post} />
+          </div>
         ))}
       </div>
       {hasMore && (

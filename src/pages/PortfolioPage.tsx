@@ -13,6 +13,14 @@ import BlogSection from '../components/public/BlogSection'
 import ContactSection from '../components/public/ContactSection'
 import PortfolioSkeleton from '../components/ui/PortfolioSkeleton'
 
+function SectionDivider() {
+  return (
+    <div className="max-w-[1000px] mx-auto px-12 max-md:px-6">
+      <hr className="border-t border-border" />
+    </div>
+  )
+}
+
 export default function PortfolioPage() {
   const { profile, loading: profileLoading } = useProfile()
   const { projects } = useProjects()
@@ -52,9 +60,13 @@ export default function PortfolioPage() {
       <Navbar name={profile.name} sections={sections} />
       <main>
         <HeroSection profile={profile} />
+        <SectionDivider />
         <ProjectsSection projects={projects} />
+        <SectionDivider />
         <ExperienceSection experience={experience} />
+        <SectionDivider />
         <BlogSection posts={posts} />
+        <SectionDivider />
         <ContactSection profile={profile} />
       </main>
       <Footer name={profile.name} email={profile.email} github={profile.github} linkedin={profile.linkedin} />

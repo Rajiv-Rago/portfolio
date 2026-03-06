@@ -13,7 +13,7 @@ vi.mock('../../hooks/useProjects', () => ({
 }))
 
 vi.mock('../../hooks/useExperience', () => ({
-  useExperience: () => ({ experience: [makeExperience({ id: 'e1' })] }),
+  useExperience: () => ({ experience: [makeExperience({ id: 'e1', start_date: '2023-01' })] }),
 }))
 
 vi.mock('../../hooks/useBlogPosts', () => ({
