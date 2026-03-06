@@ -23,9 +23,9 @@ Requirements for this milestone. Each maps to roadmap phases.
 ### UI/UX
 
 - [x] **UIUX-01**: Hero avatar displays as clean pixel art without container or shadow
-- [ ] **UIUX-02**: Hover micro-interactions on cards, links, and buttons
-- [ ] **UIUX-03**: Staggered entrance animations on cards and list items
-- [ ] **UIUX-04**: Visual section differentiation with alternate backgrounds, spacing, and rhythm
+- [x] **UIUX-02**: Hover micro-interactions on cards, links, and buttons
+- [x] **UIUX-03**: Staggered entrance animations on cards and list items
+- [x] **UIUX-04**: Visual section differentiation with alternate backgrounds, spacing, and rhythm
 
 ## v2 Requirements
 
@@ -63,9 +63,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CONT-02 | Phase 2 | Complete |
 | CONT-03 | Phase 2 | Complete |
 | UIUX-01 | Phase 3 | Complete |
-| UIUX-02 | Phase 3 | Pending |
-| UIUX-03 | Phase 3 | Pending |
-| UIUX-04 | Phase 3 | Pending |
+| UIUX-02 | Phase 3 | Complete |
+| UIUX-03 | Phase 3 | Complete |
+| UIUX-04 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 11 total
