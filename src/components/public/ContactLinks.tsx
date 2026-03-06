@@ -34,10 +34,10 @@ export default function ContactLinks({ profile }: { profile: Profile }) {
         {profile.contact_intro ?? "I'd love to hear from you! Whether you have a project in mind, want to collaborate, or just want to say hello \u2014 don't hesitate to reach out."}
       </p>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 px-4 py-3 border border-border rounded-[10px] transition-all hover:border-accent hover:bg-accent-light">
         <a
           href={`mailto:${profile.email}`}
-          className="flex items-center gap-2 no-underline text-text text-sm font-medium hover:text-accent transition-colors"
+          className="flex items-center gap-3 no-underline text-text text-sm font-medium flex-1"
         >
           <Mail className="w-5 h-5 shrink-0 text-accent" />
           {profile.email}
@@ -45,7 +45,7 @@ export default function ContactLinks({ profile }: { profile: Profile }) {
         <button
           type="button"
           onClick={handleCopyEmail}
-          className="p-1.5 rounded-[--radius-md] text-muted hover:text-accent hover:bg-accent-light transition-colors cursor-pointer"
+          className="p-1 rounded-[--radius-md] text-muted hover:text-accent transition-colors cursor-pointer"
           aria-label={copied ? 'Copied' : 'Copy email'}
           title={copied ? 'Copied!' : 'Copy email'}
         >
