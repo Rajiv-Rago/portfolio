@@ -1,6 +1,6 @@
 import type { Profile } from '../../lib/types'
 import ContactLinks from './ContactLinks'
-import EmailCTA from './EmailCTA'
+import ContactForm from './ContactForm'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export default function ContactSection({ profile }: { profile: Profile }) {
@@ -13,7 +13,7 @@ export default function ContactSection({ profile }: { profile: Profile }) {
       </h2>
       <div className="grid grid-cols-2 gap-12 max-md:grid-cols-1 max-md:gap-8">
         <ContactLinks profile={profile} />
-        <EmailCTA email={profile.email} />
+        <ContactForm />
       </div>
     </div>
   )

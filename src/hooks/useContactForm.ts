@@ -8,7 +8,6 @@ import toast from 'react-hot-toast'
 const contactSchema = z.object({
   sender_name: z.string().min(1, 'Name is required'),
   sender_email: z.string().min(1, 'Email is required').email('Please enter a valid email address'),
-  subject: z.string().min(1, 'Subject is required'),
   body: z.string().min(10, 'Message must be at least 10 characters'),
 })
 
@@ -21,7 +20,7 @@ export function useContactForm() {
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { sender_name: '', sender_email: '', subject: '', body: '' },
+    defaultValues: { sender_name: '', sender_email: '', body: '' },
   })
 
   const onSubmit = async (data: ContactFormData) => {
@@ -34,7 +33,10 @@ export function useContactForm() {
 
     setSubmitting(true)
 
-    const { error } = await supabase.from('contact_messages').insert(data)
+    const { error } = await supabase.from('contact_messages').insert({
+      ...data,
+      subject: `Message from ${data.sender_name}`,
+    })
 
     if (error) {
       toast.error('Something went wrong. Please try again.')
