@@ -9,8 +9,8 @@ Requirements for this milestone. Each maps to roadmap phases.
 
 ### Email Infrastructure
 
-- [ ] **EMAIL-01**: Cloudflare Email Routing forwards mail@rajivrago.com to Gmail
-- [ ] **EMAIL-02**: Resend SMTP configured for Gmail "Send mail as" mail@rajivrago.com
+- [x] **EMAIL-01**: Cloudflare Email Routing forwards mail@rajivrago.com to Gmail
+- [x] **EMAIL-02**: Resend SMTP configured for Gmail "Send mail as" mail@rajivrago.com
 - [x] **EMAIL-03**: DNS records configured: merged SPF, DKIM CNAMEs, DMARC policy
 - [x] **EMAIL-04**: Setup guide document with step-by-step instructions for all manual config
 
@@ -55,8 +55,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| EMAIL-01 | Phase 1 | Pending |
-| EMAIL-02 | Phase 1 | Pending |
+| EMAIL-01 | Phase 1 | Complete |
+| EMAIL-02 | Phase 1 | Complete |
 | EMAIL-03 | Phase 1 | Complete |
 | EMAIL-04 | Phase 1 | Complete |
 | CONT-01 | Phase 2 | Complete |
