@@ -13,7 +13,7 @@ This milestone adds email infrastructure, simplifies the contact experience, and
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Email Infrastructure** - Configure Cloudflare Email Routing, Resend SMTP, and DNS so mail@rajivrago.com works for send and receive
-- [ ] **Phase 2: Contact Simplification** - Replace the contact form with a mailto link and copy button, preserving historical messages
+- [x] **Phase 2: Contact Simplification** - Replace the contact form with a mailto link and copy button, preserving historical messages (completed 2026-03-06)
 - [ ] **Phase 3: UI/UX Polish** - Add micro-interactions, staggered animations, and visual section differentiation across the portfolio
 
 ## Phase Details
@@ -45,7 +45,7 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — Data contract (contact_intro migration + types + admin form) and test infrastructure (vitest setup + failing EmailCTA tests)
-- [ ] 02-02-PLAN.md — UI implementation (EmailCTA component, ContactSection and ContactLinks updates) with visual verification
+- [x] 02-02-PLAN.md — UI implementation (EmailCTA component, ContactSection and ContactLinks updates) with visual verification
 
 ### Phase 3: UI/UX Polish
 **Goal**: The portfolio feels alive and polished -- interactive hover states, staggered reveals, and clear visual rhythm between sections
@@ -70,5 +70,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Email Infrastructure | 1/2 | In Progress | - |
-| 2. Contact Simplification | 1/2 | In Progress | - |
+| 2. Contact Simplification | 2/2 | Complete   | 2026-03-06 |
 | 3. UI/UX Polish | 0/0 | Not started | - |

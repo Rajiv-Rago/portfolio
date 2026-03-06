@@ -16,9 +16,9 @@ Requirements for this milestone. Each maps to roadmap phases.
 
 ### Contact
 
-- [ ] **CONT-01**: Contact section uses mailto:mail@rajivrago.com link instead of form
-- [ ] **CONT-02**: Copy-to-clipboard button for email address with feedback
-- [ ] **CONT-03**: Admin messages view preserved for historical contact submissions
+- [x] **CONT-01**: Contact section uses mailto:mail@rajivrago.com link instead of form
+- [x] **CONT-02**: Copy-to-clipboard button for email address with feedback
+- [x] **CONT-03**: Admin messages view preserved for historical contact submissions
 
 ### UI/UX
 
@@ -59,9 +59,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | EMAIL-02 | Phase 1 | Pending |
 | EMAIL-03 | Phase 1 | Complete |
 | EMAIL-04 | Phase 1 | Complete |
-| CONT-01 | Phase 2 | Pending |
-| CONT-02 | Phase 2 | Pending |
-| CONT-03 | Phase 2 | Pending |
+| CONT-01 | Phase 2 | Complete |
+| CONT-02 | Phase 2 | Complete |
+| CONT-03 | Phase 2 | Complete |
 | UIUX-01 | Phase 3 | Pending |
 | UIUX-02 | Phase 3 | Pending |
 | UIUX-03 | Phase 3 | Pending |
