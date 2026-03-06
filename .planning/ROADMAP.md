@@ -57,10 +57,11 @@ Plans:
   3. Cards and list items animate in with staggered timing when scrolled into view
   4. Sections are visually distinct through alternating backgrounds, spacing, or other rhythm-creating techniques
   5. All animations respect prefers-reduced-motion (disabled or minimal when preference is set)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: TBD
+- [ ] 03-01-PLAN.md — CSS animation foundation (stagger-item, animated-underline classes) + hero avatar cleanup to raw pixel art
+- [ ] 03-02-PLAN.md — Hover micro-interactions, staggered card animations, section dividers, and visual verification
 
 ## Progress
 
@@ -71,4 +72,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 |-------|----------------|--------|-----------|
 | 1. Email Infrastructure | 2/2 | Complete   | 2026-03-06 |
 | 2. Contact Simplification | 2/2 | Complete   | 2026-03-06 |
-| 3. UI/UX Polish | 0/0 | Not started | - |
+| 3. UI/UX Polish | 0/2 | Not started | - |
