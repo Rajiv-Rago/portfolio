@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe 2 — Midnight Hacker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#0a0a0a;--surface:#141414;--text:#e4e4e7;--muted:#71717a;
+    --accent:#22d3ee;--accent-alt:#a78bfa;--border:#27272a;
+    --font-heading:"JetBrains Mono",monospace;--font-body:"Inter",system-ui,sans-serif;
+  }
+  body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;
+    background-image:radial-gradient(rgba(34,211,238,.03) 1px,transparent 1px);background-size:24px 24px}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;
+    position:sticky;top:0;z-index:10;background:rgba(10,10,10,.85);backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border)}
+  nav .name{font-family:var(--font-heading);font-size:.95rem;color:var(--accent)}
+  nav .name::before{content:'> ';color:var(--muted)}
+  nav ul{display:flex;gap:2rem;list-style:none}
+  nav a{text-decoration:none;color:var(--muted);font-family:var(--font-heading);font-size:.75rem;
+    letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
+  nav a:hover{color:var(--accent)}
+
+  .hero{max-width:900px;margin:0 auto;padding:6rem 3rem 7rem;position:relative}
+  .hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:400px;height:400px;background:radial-gradient(circle,rgba(34,211,238,.06),transparent 70%);
+    pointer-events:none}
+  .avatar{width:140px;height:140px;margin-bottom:2rem;position:relative}
+  .avatar img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated;
+    filter:drop-shadow(0 0 20px rgba(34,211,238,.25)) drop-shadow(0 0 40px rgba(167,139,250,.15))}
+  .status{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .8rem;
+    background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);border-radius:99px;
+    font-size:.7rem;color:var(--accent);font-family:var(--font-heading);margin-bottom:1.5rem}
+  .status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);
+    animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  h1{font-family:var(--font-heading);font-size:2.8rem;font-weight:700;margin-bottom:.75rem;
+    line-height:1.15;background:linear-gradient(135deg,var(--text),var(--accent));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .subtitle{color:var(--accent);font-family:var(--font-heading);font-size:.85rem;margin-bottom:1.5rem;
+    letter-spacing:.05em}
+  .bio{color:var(--muted);max-width:520px;font-size:.9rem;margin-bottom:2rem}
+  .btn{display:inline-block;padding:.65rem 1.6rem;background:transparent;color:var(--accent);
+    border:1px solid var(--accent);border-radius:8px;font-size:.8rem;font-family:var(--font-heading);
+    text-decoration:none;transition:all .2s;cursor:pointer}
+  .btn:hover{background:var(--accent);color:var(--bg);box-shadow:0 0 20px rgba(34,211,238,.3)}
+
+  .divider{max-width:900px;margin:0 auto;padding:0 3rem}
+  .divider div{height:1px;background:var(--border)}
+
+  .section{max-width:900px;margin:0 auto;padding:4rem 3rem}
+  h2{font-family:var(--font-heading);font-size:1rem;font-weight:500;margin-bottom:2rem;
+    color:var(--accent);text-transform:uppercase;letter-spacing:.1em}
+  h2::before{content:'## ';color:var(--muted)}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;
+    transition:all .3s}
+  .card:hover{border-color:var(--accent);box-shadow:0 0 24px rgba(34,211,238,.06);transform:translateY(-2px)}
+  .card h3{font-family:var(--font-heading);font-size:.9rem;margin-bottom:.5rem;color:var(--text)}
+  .card p{color:var(--muted);font-size:.8rem;margin-bottom:1rem}
+  .tag{display:inline-block;padding:.15rem .55rem;background:rgba(34,211,238,.08);color:var(--accent);
+    border:1px solid rgba(34,211,238,.15);border-radius:4px;font-size:.65rem;font-family:var(--font-heading);
+    margin-right:.4rem}
+
+  .footer{max-width:900px;margin:0 auto;padding:2rem 3rem;display:flex;justify-content:space-between;
+    align-items:center;border-top:1px solid var(--border);color:var(--muted);font-size:.75rem;
+    font-family:var(--font-heading)}
+  .footer .name{color:var(--accent);font-size:.8rem}
+
+  .label{position:fixed;top:1rem;right:1rem;background:var(--accent);color:var(--bg);padding:.4rem 1rem;
+    border-radius:8px;font-size:.75rem;font-weight:500;z-index:10000;font-family:var(--font-heading)}
+</style>
+</head>
+<body>
+<div class="label">2 / 8 — Midnight Hacker</div>
+<nav>
+  <div class="name">rajiv_rago</div>
+  <ul><li><a href="#">Projects</a></li><li><a href="#">Experience</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li></ul>
+</nav>
+<div class="hero">
+  <div class="avatar"><img src="../public/me.png" alt="Rajiv Rago"></div>
+  <div class="status">Available for work</div>
+  <h1>Rajiv Rago</h1>
+  <p class="subtitle">full_stack_developer</p>
+  <p class="bio">Building thoughtful web experiences with modern tools. Passionate about clean code, great UX, and shipping things that matter.</p>
+  <a href="#" class="btn">$ contact --init</a>
+</div>
+<div class="divider"><div></div></div>
+<div class="section">
+  <h2>Projects</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio built with React, TypeScript, and Supabase with a custom CMS.</p>
+      <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span>
+    </div>
+    <div class="card">
+      <h3>Task Manager</h3>
+      <p>Full-stack productivity app with real-time sync and collaborative features.</p>
+      <span class="tag">Next.js</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span>
+    </div>
+  </div>
+</div>
+<div class="divider"><div></div></div>
+<div class="section">
+  <h2>Experience</h2>
+  <div class="card">
+    <h3>Software Engineer Intern</h3>
+    <p>Acme Corp &middot; Summer 2025<br>Built internal tools and contributed to the customer-facing dashboard.</p>
+  </div>
+</div>
+<div class="footer">
+  <div class="name">> rajiv_rago</div>
+  <div>&copy; 2026</div>
+</div>
+</body>
+</html>

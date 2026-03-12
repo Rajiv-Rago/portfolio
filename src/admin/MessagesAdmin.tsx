@@ -47,7 +47,7 @@ export default function MessagesAdmin() {
         {messages.map((msg) => (
           <div
             key={msg.id}
-            className={`flex items-center gap-4 px-4 py-3 border-b border-border last:border-0 cursor-pointer hover:bg-gray-50 ${
+            className={`flex items-center gap-4 px-4 py-3 border-b border-border last:border-0 cursor-pointer hover:bg-border/30 ${
               !msg.is_read ? 'bg-accent-light/30' : ''
             }`}
             onClick={() => handleSelect(msg)}

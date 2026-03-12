@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe 8 — Retro Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#1e1108;--surface:#2a1a0e;--text:#ffd699;--muted:#a07850;
+    --accent:#ffb000;--accent-light:rgba(255,176,0,.08);--border:#3d2a18;
+    --font-heading:"IBM Plex Mono",monospace;
+    --font-body:"IBM Plex Sans",system-ui,sans-serif;
+  }
+  body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;font-weight:300}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+    background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px)}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;
+    position:sticky;top:0;z-index:10;background:rgba(30,17,8,.95);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border)}
+  nav .name{font-family:var(--font-heading);font-size:.9rem;color:var(--accent)}
+  nav .name::before{content:'[';color:var(--muted)}
+  nav .name::after{content:']';color:var(--muted)}
+  nav ul{display:flex;gap:1.5rem;list-style:none}
+  nav a{text-decoration:none;color:var(--muted);font-family:var(--font-heading);font-size:.75rem;
+    transition:color .2s}
+  nav a:hover{color:var(--accent)}
+  nav a::before{content:'> ';opacity:.4}
+
+  .hero{max-width:850px;margin:0 auto;padding:5rem 3rem 6rem;position:relative}
+  .hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:300px;height:300px;background:radial-gradient(circle,rgba(255,176,0,.05),transparent 70%);
+    pointer-events:none}
+  .prompt{font-family:var(--font-heading);font-size:.75rem;color:var(--muted);margin-bottom:2rem}
+  .prompt .cursor{display:inline-block;width:8px;height:14px;background:var(--accent);
+    animation:blink 1s step-end infinite;vertical-align:middle;margin-left:4px}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  .avatar{width:130px;height:130px;margin-bottom:2rem;position:relative}
+  .avatar img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated;
+    filter:drop-shadow(0 0 18px rgba(255,176,0,.2)) drop-shadow(0 4px 8px rgba(0,0,0,.3))}
+  h1{font-family:var(--font-heading);font-size:2.5rem;font-weight:500;margin-bottom:.5rem;
+    color:var(--accent);line-height:1.2}
+  .subtitle{font-family:var(--font-heading);color:var(--muted);font-size:.85rem;margin-bottom:1.5rem}
+  .subtitle::before{content:'// '}
+  .bio{color:var(--muted);max-width:500px;font-size:.9rem;margin-bottom:2rem;font-weight:300}
+  .btn{display:inline-block;padding:.55rem 1.5rem;background:transparent;color:var(--accent);
+    border:1px solid var(--accent);font-size:.8rem;font-family:var(--font-heading);
+    text-decoration:none;transition:all .2s;cursor:pointer}
+  .btn:hover{background:var(--accent);color:var(--bg);box-shadow:0 0 15px rgba(255,176,0,.2)}
+  .btn::before{content:'$ '}
+
+  .divider{max-width:850px;margin:0 auto;padding:0 3rem}
+  .divider div{height:1px;background:var(--border);position:relative}
+  .divider div::before{content:'---';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    background:var(--bg);padding:0 1rem;font-family:var(--font-heading);font-size:.7rem;color:var(--border)}
+
+  .section{max-width:850px;margin:0 auto;padding:4rem 3rem}
+  h2{font-family:var(--font-heading);font-size:1rem;font-weight:500;margin-bottom:2rem;
+    color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+  h2::before{content:'# ';color:var(--muted)}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+  .card{background:var(--surface);border:1px solid var(--border);padding:1.5rem;transition:all .3s}
+  .card:hover{border-color:var(--accent);box-shadow:0 0 20px rgba(255,176,0,.05)}
+  .card h3{font-family:var(--font-heading);font-size:.9rem;margin-bottom:.5rem;color:var(--text)}
+  .card h3::before{content:'> ';color:var(--accent)}
+  .card p{color:var(--muted);font-size:.8rem;margin-bottom:1rem;font-weight:300}
+  .tag{display:inline-block;padding:.1rem .5rem;color:var(--accent);font-family:var(--font-heading);
+    font-size:.65rem;margin-right:.4rem;opacity:.7}
+  .tag::before{content:'['}
+  .tag::after{content:']'}
+
+  .exp{font-family:var(--font-heading);padding:1rem 0;border-bottom:1px solid var(--border);font-size:.85rem}
+  .exp .date{color:var(--muted);font-size:.75rem}
+  .exp .title{color:var(--text);margin:.3rem 0}
+  .exp .title::before{content:'> ';color:var(--accent)}
+  .exp .desc{color:var(--muted);font-family:var(--font-body);font-size:.8rem;font-weight:300}
+
+  .footer{max-width:850px;margin:0 auto;padding:2rem 3rem;display:flex;justify-content:space-between;
+    align-items:center;border-top:1px solid var(--border);color:var(--muted);
+    font-family:var(--font-heading);font-size:.7rem}
+  .footer .name{color:var(--accent);font-size:.8rem}
+
+  .label{position:fixed;top:1rem;right:1rem;background:var(--accent);color:var(--bg);padding:.4rem 1rem;
+    font-size:.7rem;font-weight:500;z-index:10000;font-family:var(--font-heading)}
+</style>
+</head>
+<body>
+<div class="label">8 / 8 — Retro Terminal</div>
+<nav>
+  <div class="name">rajiv.rago</div>
+  <ul><li><a href="#">projects</a></li><li><a href="#">experience</a></li><li><a href="#">blog</a></li><li><a href="#">contact</a></li></ul>
+</nav>
+<div class="hero">
+  <div class="prompt">rajiv@portfolio:~$ cat about.txt<span class="cursor"></span></div>
+  <div class="avatar"><img src="../public/me.png" alt="Rajiv Rago"></div>
+  <h1>Rajiv Rago</h1>
+  <p class="subtitle">Full Stack Developer</p>
+  <p class="bio">Building thoughtful web experiences with modern tools. Passionate about clean code, great UX, and shipping things that matter.</p>
+  <a href="#" class="btn">contact --send</a>
+</div>
+<div class="divider"><div></div></div>
+<div class="section">
+  <h2>Projects</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio built with React, TypeScript, and Supabase with a custom CMS.</p>
+      <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span>
+    </div>
+    <div class="card">
+      <h3>Task Manager</h3>
+      <p>Full-stack productivity app with real-time sync and collaborative features.</p>
+      <span class="tag">Next.js</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span>
+    </div>
+  </div>
+</div>
+<div class="divider"><div></div></div>
+<div class="section">
+  <h2>Experience</h2>
+  <div class="exp">
+    <div class="date">2025.06 - 2025.08</div>
+    <div class="title">Software Engineer Intern @ Acme Corp</div>
+    <div class="desc">Built internal tools and contributed to the customer-facing dashboard.</div>
+  </div>
+</div>
+<div class="footer">
+  <div class="name">[rajiv.rago]</div>
+  <div>EOF &copy; 2026</div>
+</div>
+</body>
+</html>

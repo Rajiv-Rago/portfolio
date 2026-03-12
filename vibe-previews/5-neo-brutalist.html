@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe 5 — Neo-Brutalist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#fffdf7;--surface:#fff;--text:#000;--muted:#555;
+    --accent:#ff2d55;--accent-alt:#ffdd00;--border:#000;
+    --font-heading:"Bebas Neue",Impact,sans-serif;
+    --font-body:"Space Grotesk",system-ui,sans-serif;
+  }
+  body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.5}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;
+    position:sticky;top:0;z-index:10;background:var(--accent-alt);border-bottom:3px solid var(--text)}
+  nav .name{font-family:var(--font-heading);font-size:1.8rem;letter-spacing:.05em}
+  nav ul{display:flex;gap:1.5rem;list-style:none}
+  nav a{text-decoration:none;color:var(--text);font-size:.85rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:.05em;padding:.3rem .6rem;transition:all .15s}
+  nav a:hover{background:var(--text);color:var(--accent-alt)}
+
+  .hero{max-width:1000px;margin:0 auto;padding:5rem 3rem 6rem;position:relative}
+  .hero::before{content:'DEVELOPER';position:absolute;top:2rem;right:3rem;font-family:var(--font-heading);
+    font-size:8rem;color:rgba(0,0,0,.03);line-height:1;pointer-events:none;letter-spacing:.05em}
+  .avatar{width:130px;height:130px;background:var(--accent);border:3px solid var(--text);
+    display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff;
+    font-family:var(--font-heading);margin-bottom:2rem;transform:rotate(-3deg);
+    box-shadow:6px 6px 0 var(--text)}
+  h1{font-family:var(--font-heading);font-size:5.5rem;line-height:.9;margin-bottom:1rem;
+    letter-spacing:.02em}
+  h1 .highlight{display:inline;background:var(--accent);color:#fff;padding:0 .15em;
+    -webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .subtitle{font-size:1.1rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;
+    margin-bottom:1.5rem;color:var(--muted)}
+  .bio{color:var(--muted);max-width:500px;font-size:.95rem;margin-bottom:2rem}
+  .btn{display:inline-block;padding:.75rem 2rem;background:var(--text);color:#fff;
+    border:3px solid var(--text);font-size:.9rem;font-family:var(--font-body);font-weight:600;
+    text-decoration:none;text-transform:uppercase;letter-spacing:.05em;
+    transition:all .15s;cursor:pointer;box-shadow:4px 4px 0 var(--accent)}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--accent)}
+
+  .divider{max-width:1000px;margin:0 auto;padding:0 3rem}
+  .divider div{height:3px;background:var(--text)}
+
+  .section{max-width:1000px;margin:0 auto;padding:4rem 3rem}
+  h2{font-family:var(--font-heading);font-size:3rem;margin-bottom:2rem;letter-spacing:.03em;
+    position:relative;display:inline-block}
+  h2::after{content:'';position:absolute;bottom:2px;left:0;width:100%;height:8px;
+    background:var(--accent-alt);z-index:-1}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+  .card{background:var(--surface);border:3px solid var(--text);padding:1.5rem;
+    transition:all .15s;box-shadow:4px 4px 0 var(--text)}
+  .card:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 var(--text)}
+  .card h3{font-family:var(--font-heading);font-size:1.5rem;letter-spacing:.03em;margin-bottom:.4rem}
+  .card p{color:var(--muted);font-size:.85rem;margin-bottom:1rem}
+  .tag{display:inline-block;padding:.2rem .5rem;background:var(--accent-alt);color:var(--text);
+    border:2px solid var(--text);font-size:.7rem;font-weight:600;margin-right:.35rem;
+    text-transform:uppercase;letter-spacing:.03em}
+
+  .footer{max-width:1000px;margin:0 auto;padding:2rem 3rem;display:flex;justify-content:space-between;
+    align-items:center;border-top:3px solid var(--text);font-size:.85rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:.05em}
+  .footer .name{font-family:var(--font-heading);font-size:1.5rem}
+
+  .label{position:fixed;top:1rem;right:1rem;background:var(--accent);color:#fff;padding:.4rem 1rem;
+    border:2px solid var(--text);font-size:.75rem;font-weight:600;z-index:10000;
+    font-family:var(--font-body);text-transform:uppercase;box-shadow:3px 3px 0 var(--text)}
+</style>
+</head>
+<body>
+<div class="label">5 / 8 — Neo-Brutalist</div>
+<nav>
+  <div class="name">RAJIV RAGO</div>
+  <ul><li><a href="#">Projects</a></li><li><a href="#">Experience</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li></ul>
+</nav>
+<div class="hero">
+  <div class="avatar">R</div>
+  <h1>RAJIV<br><span class="highlight">RAGO</span></h1>
+  <p class="subtitle">Full Stack Developer</p>
+  <p class="bio">Building thoughtful web experiences with modern tools. Passionate about clean code, great UX, and shipping things that matter.</p>
+  <a href="#" class="btn">Get in Touch &rarr;</a>
+</div>
+<div class="divider"><div></div></div>
+<div class="section">
+  <h2>PROJECTS</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>PORTFOLIO WEBSITE</h3>
+      <p>A personal portfolio built with React, TypeScript, and Supabase with a custom CMS.</p>
+      <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span>
+    </div>
+    <div class="card">
+      <h3>TASK MANAGER</h3>
+      <p>Full-stack productivity app with real-time sync and collaborative features.</p>
+      <span class="tag">Next.js</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span>
+    </div>
+  </div>
+</div>
+<div class="divider"><div></div></div>
+<div class="section">
+  <h2>EXPERIENCE</h2>
+  <div class="card">
+    <h3>SOFTWARE ENGINEER INTERN</h3>
+    <p>Acme Corp &middot; Summer 2025<br>Built internal tools and contributed to the customer-facing dashboard.</p>
+  </div>
+</div>
+<div class="footer">
+  <div class="name">RAJIV RAGO</div>
+  <div>&copy; 2026</div>
+</div>
+</body>
+</html>

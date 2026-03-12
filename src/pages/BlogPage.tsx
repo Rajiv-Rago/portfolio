@@ -78,14 +78,14 @@ export default function BlogPage() {
         {post.tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mb-8">
             {post.tags.map((tag) => (
-              <span key={tag} className="text-xs font-semibold px-2 py-0.5 bg-accent-light text-accent rounded-[--radius-sm]">
+              <span key={tag} className="font-heading text-[0.65rem] px-2 py-0.5 bg-accent-light text-accent rounded-[--radius-sm] border border-accent/15">
                 {tag}
               </span>
             ))}
           </div>
         )}
 
-        <div className="prose prose-slate max-w-none [&_h2]:font-heading [&_h3]:font-heading [&_a]:text-accent">
+        <div className="prose-blog max-w-none">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.body}</ReactMarkdown>
         </div>
       </article>

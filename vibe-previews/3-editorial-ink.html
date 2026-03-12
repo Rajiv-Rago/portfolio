@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe 3 — Editorial Ink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#fafaf9;--surface:#fff;--text:#111;--muted:#6b6b6b;
+    --accent:#111;--accent-light:#f5f5f4;--border:#e5e5e5;
+    --font-heading:"Playfair Display",Georgia,serif;
+    --font-body:"Source Sans 3",system-ui,sans-serif;
+  }
+  body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;
+    font-weight:300}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;
+    position:sticky;top:0;z-index:10;background:rgba(250,250,249,.95);backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border)}
+  nav .name{font-family:var(--font-heading);font-size:1.15rem;color:var(--text);letter-spacing:-.02em}
+  nav ul{display:flex;gap:2.5rem;list-style:none}
+  nav a{text-decoration:none;color:var(--muted);font-size:.8rem;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:400;transition:color .2s}
+  nav a:hover{color:var(--text)}
+
+  .hero{max-width:800px;margin:0 auto;padding:7rem 3rem 8rem;text-align:center}
+  .avatar{width:110px;height:110px;border-radius:50%;background:var(--text);margin:0 auto 2.5rem;
+    display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:var(--bg);
+    font-family:var(--font-heading);font-style:italic}
+  h1{font-family:var(--font-heading);font-size:4rem;font-weight:400;margin-bottom:.5rem;
+    line-height:1.1;letter-spacing:-.03em}
+  h1 em{font-style:italic;font-weight:400}
+  .rule{width:60px;height:2px;background:var(--text);margin:1.5rem auto}
+  .subtitle{color:var(--muted);font-size:1.1rem;margin-bottom:1.5rem;font-weight:300;
+    letter-spacing:.05em;text-transform:uppercase;font-size:.85rem}
+  .bio{color:var(--muted);max-width:480px;margin:0 auto 2.5rem;font-size:1rem}
+  .btn{display:inline-block;padding:.7rem 2.2rem;background:var(--text);color:var(--bg);
+    border:none;border-radius:0;font-size:.8rem;font-family:var(--font-body);font-weight:400;
+    text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:all .2s}
+  .btn:hover{background:#333;transform:translateY(-1px)}
+
+  .divider{max-width:800px;margin:0 auto;padding:0 3rem}
+  .divider div{height:1px;background:var(--border)}
+
+  .section{max-width:800px;margin:0 auto;padding:5rem 3rem}
+  h2{font-family:var(--font-heading);font-size:2rem;font-weight:400;margin-bottom:.5rem;
+    letter-spacing:-.02em;font-style:italic}
+  .section-sub{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    margin-bottom:2.5rem;font-weight:400}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+  .card{border-bottom:1px solid var(--border);padding-bottom:1.5rem;transition:all .2s}
+  .card:hover{border-color:var(--text)}
+  .card-num{font-family:var(--font-heading);font-size:2rem;color:var(--border);margin-bottom:.5rem;
+    font-style:italic}
+  .card h3{font-family:var(--font-heading);font-size:1.2rem;font-weight:400;margin-bottom:.4rem}
+  .card p{color:var(--muted);font-size:.85rem;margin-bottom:.8rem}
+  .tag{display:inline-block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin-right:1rem;font-weight:500}
+
+  .exp-card{display:flex;gap:2rem;padding:1.5rem 0;border-bottom:1px solid var(--border)}
+  .exp-date{font-family:var(--font-heading);font-style:italic;color:var(--muted);min-width:120px;font-size:.95rem}
+  .exp-card h3{font-family:var(--font-heading);font-size:1.1rem;font-weight:400;margin-bottom:.3rem}
+  .exp-card p{color:var(--muted);font-size:.85rem}
+
+  .footer{max-width:800px;margin:0 auto;padding:3rem;display:flex;justify-content:space-between;
+    align-items:center;border-top:1px solid var(--border);color:var(--muted);font-size:.75rem;
+    letter-spacing:.08em;text-transform:uppercase}
+  .footer .name{font-family:var(--font-heading);font-style:italic;font-size:1rem;color:var(--text);
+    text-transform:none;letter-spacing:normal}
+
+  .label{position:fixed;top:1rem;right:1rem;background:var(--text);color:var(--bg);padding:.4rem 1rem;
+    border-radius:0;font-size:.7rem;font-weight:500;z-index:10000;font-family:var(--font-body);
+    letter-spacing:.08em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="label">3 / 8 — Editorial Ink</div>
+<nav>
+  <div class="name">Rajiv Rago</div>
+  <ul><li><a href="#">Projects</a></li><li><a href="#">Experience</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li></ul>
+</nav>
+<div class="hero">
+  <div class="avatar">R</div>
+  <h1><em>Rajiv</em> Rago</h1>
+  <div class="rule"></div>
+  <p class="subtitle">Full Stack Developer</p>
+  <p class="bio">Building thoughtful web experiences with modern tools. Passionate about clean code, great UX, and shipping things that matter.</p>
+  <a href="#" class="btn">Get in Touch</a>
+</div>
+<div class="divider"><div></div></div>
+<div class="section">
+  <h2>Selected Work</h2>
+  <p class="section-sub">Recent Projects</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-num">01</div>
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio built with React, TypeScript, and Supabase with a custom CMS.</p>
+      <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span>
+    </div>
+    <div class="card">
+      <div class="card-num">02</div>
+      <h3>Task Manager</h3>
+      <p>Full-stack productivity app with real-time sync and collaborative features.</p>
+      <span class="tag">Next.js</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span>
+    </div>
+  </div>
+</div>
+<div class="divider"><div></div></div>
+<div class="section">
+  <h2>Experience</h2>
+  <p class="section-sub">Where I've Worked</p>
+  <div class="exp-card">
+    <div class="exp-date">2025</div>
+    <div>
+      <h3>Software Engineer Intern</h3>
+      <p>Acme Corp &mdash; Built internal tools and contributed to the customer-facing dashboard.</p>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="name">Rajiv Rago</div>
+  <div>&copy; 2026</div>
+</div>
+</body>
+</html>

@@ -14,25 +14,25 @@ export default function ProjectCard({ project, allowFeaturedSpan = true }: { pro
 
   return (
     <div
-      className={`h-full bg-surface border border-border rounded-[--radius-lg] p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-text/5 hover:border-accent ${
+      className={`group h-full bg-surface border border-border/80 rounded-[--radius-lg] p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-accent/8 hover:border-accent/40 ${
         project.is_featured && allowFeaturedSpan ? 'col-span-2 max-md:col-span-1' : ''
       }`}
     >
       {/* Thumbnail */}
       {showImage && (
-        <div className="aspect-video overflow-hidden rounded-[--radius-sm] mb-4">
+        <div className="aspect-video overflow-hidden rounded-[--radius-md] mb-5 -mx-1 -mt-1">
           <img
             src={project.thumbnail!}
             alt={project.title}
             loading="lazy"
             width={600}
             height={337}
-            className={`w-full h-full object-cover ${objectPositionMap[position]}`}
+            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${objectPositionMap[position]}`}
           />
         </div>
       )}
       {showLive && (
-        <div className="aspect-video overflow-hidden rounded-[--radius-sm] mb-4 relative bg-surface">
+        <div className="aspect-video overflow-hidden rounded-[--radius-md] mb-5 -mx-1 -mt-1 relative bg-surface">
           <iframe
             src={project.live_url!}
             title={`${project.title} live preview`}
@@ -47,18 +47,18 @@ export default function ProjectCard({ project, allowFeaturedSpan = true }: { pro
         </div>
       )}
 
-      {/* Color bar */}
-      <div className={`${project.is_featured ? 'w-20' : 'w-10'} h-1 rounded-sm bg-accent mb-4`} />
+      {/* Accent bar */}
+      <div className={`${project.is_featured ? 'w-16' : 'w-8'} h-0.5 rounded-full bg-accent/50 mb-4`} />
 
-      <h3 className="text-lg font-normal mb-1">{project.title}</h3>
-      <p className="text-sm text-muted mb-3">{project.description}</p>
+      <h3 className="text-lg font-normal mb-1.5">{project.title}</h3>
+      <p className="text-sm text-muted mb-4 leading-relaxed">{project.description}</p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-1.5">
         {project.tech_stack.map((tech) => (
           <span
             key={tech}
-            className="text-[0.7rem] font-semibold px-2 py-0.5 bg-accent-light text-accent rounded-[--radius-sm]"
+            className="font-heading text-[0.65rem] px-2 py-0.5 bg-accent-light text-accent rounded-[--radius-sm] border border-accent/15"
           >
             {tech}
           </span>
@@ -67,13 +67,13 @@ export default function ProjectCard({ project, allowFeaturedSpan = true }: { pro
 
       {/* Links */}
       {(project.live_url || project.repo_url) && (
-        <div className="flex gap-4 mt-3">
+        <div className="flex gap-5 mt-4 pt-4 border-t border-border/50">
           {project.live_url && (
             <a
               href={project.live_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-accent font-medium hover:underline"
+              className="text-sm text-accent font-medium hover:text-accent-dark transition-colors"
             >
               Live Demo &rarr;
             </a>
@@ -83,7 +83,7 @@ export default function ProjectCard({ project, allowFeaturedSpan = true }: { pro
               href={project.repo_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-accent font-medium hover:underline"
+              className="text-sm text-muted font-medium hover:text-accent transition-colors"
             >
               Source Code &rarr;
             </a>

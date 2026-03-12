@@ -38,8 +38,8 @@ export default function BlogListPage() {
         <div className="flex flex-wrap gap-2 mb-8">
           <button
             onClick={() => setActiveTag(null)}
-            className={`text-xs font-semibold px-3 py-1 rounded-[--radius-sm] transition-colors cursor-pointer ${
-              !activeTag ? 'bg-accent text-white' : 'bg-accent-light text-accent hover:bg-accent/10'
+            className={`font-heading text-xs px-3 py-1 rounded-[--radius-sm] transition-colors cursor-pointer ${
+              !activeTag ? 'bg-accent text-bg' : 'bg-accent-light text-accent border border-accent/15 hover:bg-accent/10'
             }`}
           >
             All
@@ -48,8 +48,8 @@ export default function BlogListPage() {
             <button
               key={tag}
               onClick={() => setActiveTag(activeTag === tag ? null : tag)}
-              className={`text-xs font-semibold px-3 py-1 rounded-[--radius-sm] transition-colors cursor-pointer ${
-                activeTag === tag ? 'bg-accent text-white' : 'bg-accent-light text-accent hover:bg-accent/10'
+              className={`font-heading text-xs px-3 py-1 rounded-[--radius-sm] transition-colors cursor-pointer ${
+                activeTag === tag ? 'bg-accent text-bg' : 'bg-accent-light text-accent border border-accent/15 hover:bg-accent/10'
               }`}
             >
               {tag}

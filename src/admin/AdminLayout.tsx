@@ -48,7 +48,7 @@ function AdminContent() {
               end={item.end}
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2 rounded-[--radius-md] text-sm font-medium transition-colors ${
-                  isActive ? 'bg-accent-light text-accent' : 'text-muted hover:text-text hover:bg-gray-50'
+                  isActive ? 'bg-accent-light text-accent' : 'text-muted hover:text-text hover:bg-border/30'
                 }`
               }
             >

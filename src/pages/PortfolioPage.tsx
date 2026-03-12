@@ -16,7 +16,7 @@ import PortfolioSkeleton from '../components/ui/PortfolioSkeleton'
 function SectionDivider() {
   return (
     <div className="max-w-[1000px] mx-auto px-12 max-md:px-6">
-      <hr className="border-t border-border" />
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </div>
   )
 }

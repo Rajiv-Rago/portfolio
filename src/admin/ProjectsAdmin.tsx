@@ -70,7 +70,7 @@ export default function ProjectsAdmin() {
           </thead>
           <tbody>
             {projects.map((p) => (
-              <tr key={p.id} className="border-b border-border last:border-0 hover:bg-gray-50">
+              <tr key={p.id} className="border-b border-border last:border-0 hover:bg-border/30">
                 <td className="px-4 py-3 font-medium">{p.title}</td>
                 <td className="px-4 py-3"><StatusBadge status={p.status} /></td>
                 <td className="px-4 py-3 text-muted max-md:hidden">{format(new Date(p.created_at), 'MMM d, yyyy')}</td>

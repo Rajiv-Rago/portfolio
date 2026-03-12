@@ -77,7 +77,7 @@ export default function BlogAdmin() {
           </thead>
           <tbody>
             {sorted.map((p) => (
-              <tr key={p.id} className={`border-b border-border last:border-0 hover:bg-gray-50 ${p.status === 'draft' ? 'opacity-70' : ''}`}>
+              <tr key={p.id} className={`border-b border-border last:border-0 hover:bg-border/30 ${p.status === 'draft' ? 'opacity-70' : ''}`}>
                 <td className="px-4 py-3 font-medium">{p.title}</td>
                 <td className="px-4 py-3"><StatusBadge status={p.status} /></td>
                 <td className="px-4 py-3 text-muted max-md:hidden">

@@ -30,16 +30,16 @@ export default function ContactLinks({ profile }: { profile: Profile }) {
 
   return (
     <div className="flex flex-col gap-5">
-      <p className="text-muted text-[0.95rem]">
+      <p className="text-muted leading-relaxed">
         {profile.contact_intro ?? "I'd love to hear from you! Whether you have a project in mind, want to collaborate, or just want to say hello \u2014 don't hesitate to reach out."}
       </p>
 
-      <div className="flex items-center gap-3 px-4 py-3 border border-border rounded-[10px] transition-all hover:border-accent hover:bg-accent-light">
+      <div className="group flex items-center gap-3 px-4 py-3.5 border border-border/80 rounded-[--radius-md] transition-all duration-300 hover:border-accent/40 hover:bg-accent-light/30 hover:shadow-sm hover:shadow-accent/5">
         <a
           href={`mailto:${profile.email}`}
           className="flex items-center gap-3 no-underline text-text text-sm font-medium flex-1"
         >
-          <Mail className="w-5 h-5 shrink-0 text-accent" />
+          <Mail className="w-5 h-5 shrink-0 text-accent/70 group-hover:text-accent transition-colors" />
           {profile.email}
         </a>
         <button
@@ -59,9 +59,9 @@ export default function ContactLinks({ profile }: { profile: Profile }) {
           href={link.url!}
           target={link.newTab ? '_blank' : undefined}
           rel={link.newTab ? 'noopener noreferrer' : undefined}
-          className="flex items-center gap-3 no-underline text-text text-sm font-medium px-4 py-3 border border-border rounded-[10px] transition-all hover:border-accent hover:bg-accent-light"
+          className="group flex items-center gap-3 no-underline text-text text-sm font-medium px-4 py-3.5 border border-border/80 rounded-[--radius-md] transition-all duration-300 hover:border-accent/40 hover:bg-accent-light/30 hover:shadow-sm hover:shadow-accent/5"
         >
-          <link.icon className="w-5 h-5 shrink-0 text-accent" />
+          <link.icon className="w-5 h-5 shrink-0 text-accent/70 group-hover:text-accent transition-colors" />
           {link.label}
         </a>
       ))}

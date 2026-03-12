@@ -30,10 +30,10 @@ export default function DashboardHome() {
   }, [])
 
   const cards = [
-    { label: 'Projects', count: counts.projects, icon: FolderKanban, to: '/admin/projects', color: 'text-blue-600' },
-    { label: 'Experience', count: counts.experience, icon: Briefcase, to: '/admin/experience', color: 'text-green-600' },
-    { label: 'Blog Posts', count: counts.blogPosts, icon: FileText, to: '/admin/blog', color: 'text-purple-600' },
-    { label: 'Unread Messages', count: counts.unreadMessages, icon: MessageSquare, to: '/admin/messages', color: 'text-orange-600' },
+    { label: 'Projects', count: counts.projects, icon: FolderKanban, to: '/admin/projects', color: 'text-accent' },
+    { label: 'Experience', count: counts.experience, icon: Briefcase, to: '/admin/experience', color: 'text-success' },
+    { label: 'Blog Posts', count: counts.blogPosts, icon: FileText, to: '/admin/blog', color: 'text-accent-alt' },
+    { label: 'Unread Messages', count: counts.unreadMessages, icon: MessageSquare, to: '/admin/messages', color: 'text-warning' },
   ]
 
   return (

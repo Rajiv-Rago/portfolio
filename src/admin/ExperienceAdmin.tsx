@@ -72,7 +72,7 @@ export default function ExperienceAdmin() {
           </thead>
           <tbody>
             {experience.map((exp) => (
-              <tr key={exp.id} className="border-b border-border last:border-0 hover:bg-gray-50">
+              <tr key={exp.id} className="border-b border-border last:border-0 hover:bg-border/30">
                 <td className="px-4 py-3 font-medium">{exp.job_title}</td>
                 <td className="px-4 py-3 text-muted">{exp.company}</td>
                 <td className="px-4 py-3 text-muted max-md:hidden">
