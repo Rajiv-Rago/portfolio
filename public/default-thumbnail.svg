@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" fill="#141414"/>
+
+  <!-- Subtle dot grid -->
+  <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="12" cy="12" r="0.8" fill="#e4e4e7" opacity="0.06"/>
+  </pattern>
+  <rect width="640" height="360" fill="url(#dots)"/>
+
+  <!-- Curly braces { } with nested structure -->
+
+  <!-- Left brace { -->
+  <path d="M220 100 Q210 100 210 110 L210 165 Q210 180 200 180 Q210 180 210 195 L210 250 Q210 260 220 260" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- Right brace } -->
+  <path d="M420 100 Q430 100 430 110 L430 165 Q430 180 440 180 Q430 180 430 195 L430 250 Q430 260 420 260" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- Inner content lines (like JSON/code) -->
+  <rect x="260" y="140" width="50" height="3" rx="1.5" fill="#a78bfa" opacity="0.5"/>
+  <rect x="318" y="140" width="30" height="3" rx="1.5" fill="#e4e4e7" opacity="0.2"/>
+
+  <rect x="260" y="162" width="35" height="3" rx="1.5" fill="#a78bfa" opacity="0.4"/>
+  <rect x="303" y="162" width="65" height="3" rx="1.5" fill="#e4e4e7" opacity="0.15"/>
+
+  <rect x="260" y="184" width="70" height="3" rx="1.5" fill="#22d3ee" opacity="0.4"/>
+  <rect x="338" y="184" width="40" height="3" rx="1.5" fill="#e4e4e7" opacity="0.15"/>
+
+  <rect x="260" y="206" width="45" height="3" rx="1.5" fill="#a78bfa" opacity="0.35"/>
+  <rect x="313" y="206" width="55" height="3" rx="1.5" fill="#e4e4e7" opacity="0.12"/>
+
+  <!-- Subtle glow -->
+  <ellipse cx="320" cy="180" rx="80" ry="60" fill="#22d3ee" opacity="0.025"/>
+</svg>

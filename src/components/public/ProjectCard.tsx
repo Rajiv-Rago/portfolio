@@ -11,6 +11,7 @@ export default function ProjectCard({ project, allowFeaturedSpan = true }: { pro
   const position = project.thumbnail_position ?? 'center'
   const showImage = mode === 'image' && project.thumbnail
   const showLive = mode === 'live' && project.live_url
+  const showFallback = !showImage && !showLive
 
   return (
     <div
@@ -43,6 +44,17 @@ export default function ProjectCard({ project, allowFeaturedSpan = true }: { pro
               transform: 'scale(0.25)',
               transformOrigin: 'top left',
             }}
+          />
+        </div>
+      )}
+      {showFallback && (
+        <div className="aspect-video overflow-hidden rounded-[--radius-md] mb-5 -mx-1 -mt-1">
+          <img
+            src="/default-thumbnail.svg"
+            alt=""
+            width={600}
+            height={337}
+            className="w-full h-full object-cover"
           />
         </div>
       )}
